@@ -13,7 +13,7 @@ function ProductTable(props) {
       </thead>
       <tbody>
         {allProducts.map((product) => {
-          return <ProductRow name={product.name} price={product.price} />;
+          return <ProductRow {...product} />;
         })}
       </tbody>
     </table>

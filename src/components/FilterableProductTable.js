@@ -10,7 +10,16 @@ class FilterableProductTable extends React.Component {
 
   searchProduct = (params) => {
     let newList = this.state.products.filter((product) => {
-      return product.name.toLowerCase().includes(params);
+      // if stocked, return products that match the name and are stocked
+      // how to check if they match the name
+
+      if (params.stocked) {
+        return (
+          product.name.toLowerCase().includes(params.name) && product.stocked
+        );
+      } else {
+        return product.name.toLowerCase().includes(params.name);
+      }
     });
     this.setState({
       filteredProducts: newList,

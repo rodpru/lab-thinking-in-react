@@ -17,7 +17,7 @@ class SearchBar extends React.Component {
         [name]: value,
       },
       () => {
-        this.props.search(this.state.name);
+        this.props.search(this.state);
       }
     );
   };
